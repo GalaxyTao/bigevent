@@ -1,0 +1,78 @@
+/* a {
+    text-decoration: none;
+    color: #898787;
+}
+
+a:hover {
+    color: #b8b5b5;
+} */
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: url("/assets/images/login_bg.jpg") no-repeat center;
+}
+
+.links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* 版心 */
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    margin: 30px 0 0 50px;
+}
+
+
+/* 登录注册盒子 */
+
+.loginAndRegBox {
+    width: 400px;
+    height: 310px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 0 30px;
+}
+
+
+/* 登录注册盒子标题 */
+
+.loginAndRegBox .title-box {
+    height: 60px;
+    background: url("/assets/images/login_title.png") no-repeat center;
+}
+
+
+/* 登录盒子 */
+
+
+/* 注册盒子 */
+
+.loginAndRegBox .reg-box {
+    display: none;
+}
+
+.layui-form-item {
+    position: relative;
+}
+
+.layui-form-item i {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.layui-input {
+    padding-left: 32px;
+}
