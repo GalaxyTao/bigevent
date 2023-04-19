@@ -1,6 +1,6 @@
 // const { default: axios } = require("axios");
 
-// import { service } from "./baseAPI";
+// import axios from "axios";
 window.addEventListener('load', function() {
 
     let link_reg = this.document.querySelector('#link_reg');
@@ -16,13 +16,6 @@ window.addEventListener('load', function() {
         login.style.display = 'block';
         reg.style.display = 'none'
     })
-
-
-    // const service = axios.create({
-    //     baseURL: 'http://www.liulongbin.top:3007',
-    //     timeout: 10000
-    // })
-
 
 
     // 自定义layui规则
@@ -87,8 +80,8 @@ window.addEventListener('load', function() {
         //     },
         //     error => { console.log('失败了', error.message) })
 
-        service({
-            url: '/api/reguser',
+        axios({
+            url: 'http://www.liulongbin.top:3007/api/reguser',
             method: 'post',
             data: {
                 username: reg_name.value,
@@ -111,11 +104,10 @@ window.addEventListener('load', function() {
     let login_name = this.document.querySelector('#form_reg .layui-input');
     let login_pwd = this.document.querySelectorAll('#form_reg .layui-input')[1];
 
-
     form_login.addEventListener('submit', function(e) {
         e.preventDefault()
-        service({
-            url: '/api/login',
+        axios({
+            url: 'http://www.liulongbin.top:3007/api/login',
             method: 'POST',
             data: {
                 username: login_name.value,
@@ -123,7 +115,7 @@ window.addEventListener('load', function() {
             },
             headers: { "Content-Type": "application/x-www-form-urlencoded" }
         }).then(function(res) {
-            if (res.data.status !== 0) {
+            if (res.data.status != 0) {
                 return layer.msg('登录失败')
             }
             layer.msg('登录成功！')
