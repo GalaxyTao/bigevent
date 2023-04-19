@@ -5,7 +5,7 @@
 
 
 service.interceptors.request.use(function(config) {
-    console.log(config);
+    // console.log(config);
     if (config) {
         const token = localStorage.getItem('token')
         token && (config.headers['Authorization'] = token)
@@ -18,7 +18,7 @@ service.interceptors.request.use(function(config) {
 
 service.interceptors.response.use(function(response) {
     //响应成功的
-    console.log(response);
+    // console.log(response);
     if (response.data.status !== 0) {
         localStorage.removeItem('token')
         location.href = '/login.html'
@@ -58,6 +58,7 @@ function getUserInfo() {
     service({
         url: '/my/userinfo',
         method: 'get',
+        // token 验证，没有token就不能获取资料
         headers: {
             Authorization: this.localStorage.getItem('token') || ''
         }
